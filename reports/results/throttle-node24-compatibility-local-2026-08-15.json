@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-08-15T18:50:08Z",
+  "snapshot": "uncommitted:codex/v0.1.0-implementation",
+  "environment": {
+    "containerImage": "node:24-alpine",
+    "containerImageDigest": "node@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43",
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "platform": "linux-arm64"
+  },
+  "verification": {
+    "typecheck": "passed",
+    "build": "passed",
+    "deterministicTests": {
+      "passed": 13,
+      "failed": 0
+    },
+    "redisIntegrationTests": {
+      "redisVersion": "8.2.8",
+      "passed": 3,
+      "failed": 0
+    },
+    "freshConsumerInstall": [
+      {
+        "express": "4.21.2",
+        "esmImport": "passed",
+        "types": "passed",
+        "memoryMode": "passed",
+        "redisSubpath": "passed"
+      },
+      {
+        "express": "5.2.1",
+        "esmImport": "passed",
+        "types": "passed",
+        "memoryMode": "passed",
+        "redisSubpath": "passed"
+      }
+    ],
+    "package": {
+      "files": 43,
+      "packedBytes": 12611,
+      "unpackedBytes": 43439
+    }
+  },
+  "limitations": [
+    "This is local container evidence for an uncommitted snapshot, not a released npm artifact.",
+    "The Redis test used the local Docker Redis service rather than a remote production topology."
+  ]
+}

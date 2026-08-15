@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-08-15T18:37:08.022Z",
+  "snapshot": "uncommitted:codex/v0.1.0-implementation",
+  "environment": {
+    "node": "v22.22.2",
+    "platform": "darwin-arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M4 Pro",
+    "hostMemoryBytes": 25769803776,
+    "redisVersion": "8.2.8"
+  },
+  "store": "redis",
+  "topology": "host Express process to Docker Redis through a loopback port mapping",
+  "warmup": {
+    "requests": 100,
+    "policy": "sequential requests before timed scenarios"
+  },
+  "redisOperations": {
+    "operation": "one atomic EVAL per admission decision",
+    "keyCount": 1,
+    "keyTtlMs": 59995,
+    "evalCommandStats": "calls=3100,usec=42698,usec_per_call=13.77,rejected_calls=0,failed_calls=0"
+  },
+  "scenarios": [
+    {
+      "concurrency": 1,
+      "requests": 1000,
+      "p50LatencyMs": 0.444,
+      "p95LatencyMs": 0.596,
+      "throughputRequestsPerSecond": 2161.27,
+      "failureRate": 0
+    },
+    {
+      "concurrency": 16,
+      "requests": 1000,
+      "p50LatencyMs": 2.131,
+      "p95LatencyMs": 3.299,
+      "throughputRequestsPerSecond": 6976.221,
+      "failureRate": 0
+    },
+    {
+      "concurrency": 64,
+      "requests": 1000,
+      "p50LatencyMs": 6.143,
+      "p95LatencyMs": 8.314,
+      "throughputRequestsPerSecond": 9271.163,
+      "failureRate": 0
+    }
+  ]
+}

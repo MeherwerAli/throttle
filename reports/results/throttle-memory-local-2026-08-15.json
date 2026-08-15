@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-08-15T18:36:55.545Z",
+  "snapshot": "uncommitted:codex/v0.1.0-implementation",
+  "environment": {
+    "node": "v22.22.2",
+    "platform": "darwin-arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M4 Pro",
+    "hostMemoryBytes": 25769803776,
+    "redisVersion": null
+  },
+  "store": "memory",
+  "topology": "single host process with in-memory state",
+  "warmup": {
+    "requests": 100,
+    "policy": "sequential requests before timed scenarios"
+  },
+  "redisOperations": "not applicable",
+  "scenarios": [
+    {
+      "concurrency": 1,
+      "requests": 1000,
+      "p50LatencyMs": 0.141,
+      "p95LatencyMs": 0.231,
+      "throughputRequestsPerSecond": 6297.28,
+      "failureRate": 0
+    },
+    {
+      "concurrency": 16,
+      "requests": 1000,
+      "p50LatencyMs": 1.931,
+      "p95LatencyMs": 3.042,
+      "throughputRequestsPerSecond": 7395.527,
+      "failureRate": 0
+    },
+    {
+      "concurrency": 64,
+      "requests": 1000,
+      "p50LatencyMs": 5.746,
+      "p95LatencyMs": 20.561,
+      "throughputRequestsPerSecond": 7078.479,
+      "failureRate": 0
+    }
+  ]
+}

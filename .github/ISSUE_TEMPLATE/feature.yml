@@ -1,0 +1,17 @@
+name: Extension proposal
+description: Propose a strategy, store, interoperability fixture, or operational improvement.
+title: "[extension] "
+labels: [enhancement]
+body:
+  - type: textarea
+    attributes:
+      label: Use case and failure semantics
+      description: Describe the quota boundary, concurrency model, and outage behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Acceptance evidence
+      description: List deterministic, concurrent, package-boundary, and compatibility tests.
+    validations:
+      required: true
