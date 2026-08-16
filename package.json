@@ -1,9 +1,17 @@
 {
-  "name": "@meherwerali/throttle",
+  "name": "@meherwer_ali/throttle",
   "version": "0.1.0",
   "description": "Express admission control with explicit distributed failure semantics.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeherwerAli/throttle.git"
+  },
+  "homepage": "https://github.com/MeherwerAli/throttle#readme",
+  "bugs": {
+    "url": "https://github.com/MeherwerAli/throttle/issues"
+  },
   "sideEffects": false,
   "engines": {
     "node": ">=22"
