@@ -25,4 +25,4 @@ Both stores implement discrete refills. Redis uses server time to avoid applicat
 
 ## Package boundary
 
-The root export has no runtime Redis dependency. `@meherwerali/throttle/redis` accepts the small `RedisClientLike` structural interface implemented by node-redis 6. Express remains a peer dependency so the host owns its framework version.
+The root export has no runtime Redis dependency. `@meherwer_ali/throttle/redis` accepts the small `RedisClientLike` structural interface implemented by node-redis 6. Express remains a peer dependency so the host owns its framework version.

@@ -20,7 +20,7 @@ try {
     private: true,
     type: "module",
     dependencies: {
-      "@meherwerali/throttle": `file:${tarball}`,
+      "@meherwer_ali/throttle": `file:${tarball}`,
       express: expressVersion,
       redis: "6.2.1",
       typescript: "7.0.2",
@@ -35,8 +35,8 @@ try {
   await writeFile(join(consumer, "index.mjs"), `
 import assert from "node:assert/strict";
 import express from "express";
-import { createLimiter, throttle } from "@meherwerali/throttle";
-import { redisStore } from "@meherwerali/throttle/redis";
+import { createLimiter, throttle } from "@meherwer_ali/throttle";
+import { redisStore } from "@meherwer_ali/throttle/redis";
 
 assert.equal(typeof express, "function");
 assert.equal(typeof throttle, "function");
@@ -47,8 +47,8 @@ const distributed = createLimiter({ policy: "redis", strategy: "sliding-window",
 assert.equal((await distributed.consume({ key: "client" })).allowed, true);
 `, "utf8");
   await writeFile(join(consumer, "types.ts"), `
-import type { ThrottleOptions, RateLimitStore } from "@meherwerali/throttle";
-import type { RedisClientLike } from "@meherwerali/throttle/redis";
+import type { ThrottleOptions, RateLimitStore } from "@meherwer_ali/throttle";
+import type { RedisClientLike } from "@meherwer_ali/throttle/redis";
 declare const store: RateLimitStore;
 declare const client: RedisClientLike;
 const options: ThrottleOptions = { policy: "typed", strategy: "sliding-window", limit: 10, windowMs: 1000, store };
@@ -59,7 +59,7 @@ void client;
   execFileSync(join(consumer, "node_modules", ".bin", "tsc"), [
     "--noEmit", "--strict", "--skipLibCheck", "--module", "NodeNext", "--moduleResolution", "NodeNext", "types.ts",
   ], { cwd: consumer, stdio: "inherit" });
-  const manifest = JSON.parse(await readFile(join(consumer, "node_modules", "@meherwerali", "throttle", "package.json"), "utf8"));
+  const manifest = JSON.parse(await readFile(join(consumer, "node_modules", "@meherwer_ali", "throttle", "package.json"), "utf8"));
   process.stdout.write(`consumer-ok express=${expressVersion} package=${manifest.version} tarball=${basename(tarball)}\n`);
 } finally {
   await rm(temporaryRoot, { recursive: true, force: true });
