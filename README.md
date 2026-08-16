@@ -2,11 +2,15 @@
 
 Throttle is a small Express admission-control library with exact sliding-window and token-bucket strategies. Its focus is explicit distributed failure behavior: Redis operations are atomic, client identifiers are hashed before storage, and a store outage never silently changes a multi-pod policy into independent per-process quotas.
 
+```bash
+npm install @meherwer_ali/throttle
+```
+
 ```ts
 import express from "express";
 import { createClient } from "redis";
-import { throttle } from "@meherwerali/throttle";
-import { redisStore } from "@meherwerali/throttle/redis";
+import { throttle } from "@meherwer_ali/throttle";
+import { redisStore } from "@meherwer_ali/throttle/redis";
 
 const redis = createClient({ url: process.env.REDIS_URL });
 await redis.connect();
@@ -25,7 +29,7 @@ app.use(throttle({
 ## Behavior
 
 - Node.js 22+, ESM, TypeScript 7, Express 4.18 through 5.x
-- Redis 6.x integration exported separately from `@meherwerali/throttle/redis`
+- Redis 6.x integration exported separately from `@meherwer_ali/throttle/redis`
 - atomic Redis Lua scripts using Redis server time
 - in-process memory store for development and intentional single-process use
 - construction fails in production without a shared store unless `allowInMemoryInProduction: true`
