@@ -1,9 +1,17 @@
 {
-  "name": "@meherwerali/throttle",
+  "name": "@meherwer_ali/throttle",
   "version": "0.1.0",
   "description": "Express admission control with explicit distributed failure semantics.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeherwerAli/throttle.git"
+  },
+  "homepage": "https://github.com/MeherwerAli/throttle#readme",
+  "bugs": {
+    "url": "https://github.com/MeherwerAli/throttle/issues"
+  },
   "sideEffects": false,
   "engines": {
     "node": ">=22"
@@ -24,7 +32,7 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "node init && tsc -p tsconfig.build.json",
     "check": "tsc --noEmit",
     "test": "vitest run",
     "test:redis": "vitest run test/integration/redis.test.ts",
@@ -45,7 +53,9 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "@types/supertest": "^6.0.3",
+    "dotenv": "^8.2.0",
     "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
     "redis": "^6.2.1",
     "supertest": "^7.1.4",
     "typescript": "^7.0.2",
